@@ -1,0 +1,65 @@
+[
+  {
+    "id": "f6f2187d.f17ca8",
+    "type": "tab",
+    "label": "Flow 1",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "90ca23b9086af49c",
+    "type": "inject",
+    "z": "f6f2187d.f17ca8",
+    "name": "",
+    "props": [
+      {
+        "p": "host",
+        "v": "example.com",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 250,
+    "y": 220,
+    "wires": [
+      [
+        "38ac5fb5e7f2e73f"
+      ]
+    ]
+  },
+  {
+    "id": "25b6bc47808b76f7",
+    "type": "debug",
+    "z": "f6f2187d.f17ca8",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 690,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "38ac5fb5e7f2e73f",
+    "type": "ssl-parser",
+    "z": "f6f2187d.f17ca8",
+    "name": "ssl-parser",
+    "domain_field": "host",
+    "x": 460,
+    "y": 220,
+    "wires": [
+      [
+        "25b6bc47808b76f7"
+      ]
+    ]
+  }
+]

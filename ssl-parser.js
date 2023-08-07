@@ -53,7 +53,17 @@ module.exports = function(RED) {
 			});
 
 			req.on('error', (err) => {
-				node.error(err);
+				if (err.message === 'Error: certificate has expired') {
+					node.send({
+						status: 'expired',
+					});
+				} else {
+					node.send({
+						status: 'fail',
+						message: err.message,
+					});
+					node.error(err);
+				}
 			});
 
 			req.end();
@@ -61,5 +71,6 @@ module.exports = function(RED) {
 
 		});
 	}
+
 	RED.nodes.registerType("ssl-parser", sslParser);
 }
