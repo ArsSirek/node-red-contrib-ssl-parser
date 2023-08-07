@@ -31,7 +31,6 @@ module.exports = function(RED) {
 				payload.serialNumber = certificate.serialNumber;
 				payload.derCertificate = certificate.raw;
 				// Get the certificate in DER format
-				console.log('test');
 				let prefix = '-----BEGIN CERTIFICATE-----\n';
 				let postfix = '-----END CERTIFICATE-----';
 				payload.pemCertificate = prefix + certificate.raw.toString('base64').match(/.{0,64}/g).join('\n') + postfix;

@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-ssl-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "nodered node to check domain's ssl validity",
   "homepage": "https://github.com/ArsSirek/node-red-contrib-ssl-parser",
   "repository": {
