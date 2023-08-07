@@ -1,0 +1,32 @@
+<script type="text/javascript">
+	RED.nodes.registerType('ssl-parser', {
+		category: "network",
+		defaults: {
+			name: {value: "ssl-parser"},
+			domain_field: {value: "payload"},
+		},
+		inputs: 1,
+		outputs: 1,
+		icon: "white-globe.png",
+		color: "#d2aee7",
+		label: function () {
+			return (this.name || "ssl-parser")
+		}
+	});
+</script>
+
+<script type="text/html" data-template-name="whois-parser">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-domain_field"><i class="icon-bookmark"></i> field in msg object containing domain name</label>
+        <input type="text" id="node-input-domain_field"/>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="whois-parser">
+    <p>checks domain ssl</p>
+    <p>msg.payload expected to have a domain name. and msg.payload will contain the ssl cert details information after the request is processed</p>
+</script>

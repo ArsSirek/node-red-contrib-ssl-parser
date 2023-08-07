@@ -1,0 +1,1 @@
+this module uses Nodejs native module node:https to attempt to make an https request if passed without error returns the cert details if not empty object
